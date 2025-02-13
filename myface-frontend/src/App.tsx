@@ -1,8 +1,10 @@
-import React from 'react';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import './App.css'
-import Postlist from './Pages/Postlist/Postlist';
-import UserDetails from './Pages/UserDetails';
+import UserDetails from './Pages/Users/UserDetails';
+import PostList from './Pages/Postlist/Postlist';
+import UserList from './Pages/Users/Userlist';
+
+
 
 export function App() {
   return ( 
@@ -12,14 +14,16 @@ export function App() {
       <nav>
         <Link to= "/posts">Posts</Link>
         <Link to= "/home">Home</Link>
+        <Link to= "/users">Users</Link>
 
       </nav>
-
       <Routes>
           <Route path="/posts"
-            element={<Postlist/>}/>
+            element={<PostList/>}/>
           <Route path="/home"
             element={<UserDetails/>}/>
+          <Route path="/users"
+            element={<UserList/>}/>
          
       </Routes>
       </div>

@@ -1,6 +1,7 @@
 
 import useFetch from "../../Utils/useFetch";
 import { formatDate } from "date-fns";
+import "./Postlist.scss";
 
 interface PostsApiResponse {
     results: Post[];
@@ -31,9 +32,9 @@ if(error) return<p>Error:{error}</p>;
 if (!data) return <p>Error: Data not found</p>;
 return (
         <div>
-        <ul>
+        <ul className="postcontainer">
             {data.results.map((post,index) => (
-                <li key={index}>                            
+                <li className = "post" key={index}>                            
                     <p> {formatDate(post.createdAt,"dd-MM-yyyy")}</p>
                     <img src = {post.imageUrl} />
                     <p>{post.message}</p>

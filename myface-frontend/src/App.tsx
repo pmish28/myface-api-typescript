@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.scss'
-import UserDetails from './Pages/Users/UserDetails';
-import PostList from './Pages/Postlist/Postlist';
-import UserList from './Pages/Users/Userlist';
+import './Styles/App.scss'
 import Layout from './Pages/Layout';
+import UserDetails from './Pages/UserDetails';
+import PostList from './Pages/Postlist';
+import UserList from './Pages/UserList';
+
 
 export function App() {
   return (

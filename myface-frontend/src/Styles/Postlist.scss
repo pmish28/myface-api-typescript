@@ -1,0 +1,119 @@
+@import "reset";
+@import "global";
+
+.postpage{
+  padding:60px;
+}
+
+.postcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+.post {
+  @include flex(center,center,column);
+  width: 20%;
+  gap:5px;
+}
+
+.namewrapper {
+    @include flex(center,center,row);
+    color: white;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  .likedislikeimg{
+    height: 15px;
+  }
+
+
+.postimage {
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  justify-self: center;
+}
+
+.messagewrapper{
+    @include flex(center,center,column);
+    gap: 0px;
+    p{  
+        font-size: 10px;
+        font-weight: 500;
+        margin:2px;
+        color: white;
+        font-size: 10px;
+    }
+}
+
+@media (max-width:850px) and (min-width:550px){
+  .postpage{
+    padding: 60px,30px,60px;
+  }
+  
+  .post {
+    width: 45%;
+    font-size: 8px;
+  }
+  
+  .namewrapper {
+      gap: 5px;
+      font-size: 8px;
+      font-weight: 500;
+    }
+  
+    .likedislikeimg{
+      height: 15px;
+    }
+  
+  
+  .postimage {
+    width: 80%;;
+  }
+  
+  .messagewrapper{
+      p{  
+          font-size: 10px;
+          margin:2px;
+      }
+  }
+
+}
+@media (max-width:550px) and (min-width:300px){
+  .postpage{
+    padding: 60px,20px,60px;
+  }
+  
+  .post {
+    width: 90%;
+    font-size: 8px;
+  }
+  
+  .namewrapper {
+      gap: 5px;
+      font-size: 8px;
+      font-weight: 500;
+    }
+  
+    .likedislikeimg{
+      height: 8px;
+    }
+  
+  
+  .postimage {
+    width: 70%;;
+  }
+  
+  .messagewrapper{
+      p{  
+          font-size: 10px;
+          margin:2px;
+      }
+  }
+
+}
+  

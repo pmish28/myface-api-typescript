@@ -1,4 +1,5 @@
-import useFetch from "../../Utils/useFetch";
+import useFetch from "../Hooks/useFetch";
+import "../Styles/UserDetails.scss";
 import { formatDate } from "date-fns";
 
  interface Users {
@@ -30,52 +31,55 @@ function UserDetails() {
   if(!data) return <p>Data not found!</p>
    
   return (
-    <div>
-      <img src={data.profileImageUrl}></img>
-      <p>{data.name}</p>
-      <p>{data.username}</p>
-      <ul>
-        <p>My Posts</p>
+    <div className="home">
+      <div className="profilewrapper">
+      <img className = "myprofile" src={data.profileImageUrl}></img>
+      <div className = "namewrapper">
+      <p className="myname"> {data.name}</p>
+      <p className= "myusername">{data.username}</p>
+      </div>
+      </div>
+      <div className = "mycontainer">
+      <h3> My Posts</h3>
+      <ul className= "postsection">
         {data.posts.map((post, index) => (
-          <li key={index}>
+          <li className="myposts"key={index}>
             <p> {formatDate(post.createdAt, "dd-MM-yyyy")}</p>
             <img src={post.imageUrl} />
             <p>{post.message}</p>
-            <p>{post.id}</p>
             {/*<p> Likes: {post.likes.length}</p>
             <p> Dislikes: {post.dislikes.length}</p>*/}
           </li>
         ))}
         ;
       </ul>
-      <ul>
-        <p>My Likes</p>
+      <h3>My Likes</h3>
+      <ul className="postsection">
         {data.likes.map((post, index) => (
-          <li key={index}>
+          <li className="myposts" key={index}>
             <p> {formatDate(post.createdAt, "dd-MM-yyyy")}</p>
             <img src={post.imageUrl} />
             <p>{post.message}</p>
-            <p>{post.id}</p>
             {/*<p> Likes: {post.likes.length}</p>
             <p> Dislikes: {post.dislikes.length}</p>*/}
           </li>
         ))}
         ;
       </ul>
-      <ul>
-        <p>My Dislikes</p>
+      <h3>My Dislikes</h3>
+      <ul className="postsection">
         {data.dislikes.map((post, index) => (
-          <li key={index}>
+          <li className="myposts" key={index}>
             <p> {formatDate(post.createdAt, "dd-MM-yyyy")}</p>
             <img src={post.imageUrl} />
             <p>{post.message}</p>
-            <p>{post.id}</p>
            {/* <p> Likes: {post.likes.length}</p>
             <p> Dislikes: {post.dislikes.length}</p>*/}
           </li>
         ))}
         ;
       </ul>
+      </div>
     </div>
   );
 }
